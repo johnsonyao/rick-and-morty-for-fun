@@ -105,7 +105,7 @@ export default {
 					setTimeout(()=>{
 						this.characters = data.results;
 						this.isLoading = false;
-					}, 1500);
+					}, 500);
 			}).catch( (err) => {
 				//error handling
 				console.error(`oops, something is wrong, here's your: ${err}`);
@@ -148,6 +148,7 @@ export default {
 		},
 		onPageChange(requestURL){
 			this.isLoading = true;
+			this.searchKeyword = '';
 			this.requestURL = requestURL;
 			this.setCurrentPage();
 			this.getCharacterList();
